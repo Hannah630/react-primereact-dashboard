@@ -1,0 +1,37 @@
+.page {
+  padding: 1.5rem;
+}
+
+.title {
+  margin: 0 0 1.5rem;
+}
+
+.tableWrapper {
+  width: 100%;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.dialogForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 0.5rem 0;
+  }
+
+  .title {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+  }
+
+  .actionButtons {
+    gap: 0.35rem;
+  }
+}

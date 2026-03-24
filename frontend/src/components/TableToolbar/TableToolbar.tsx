@@ -1,5 +1,6 @@
 import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
+import styles from "./TableToolbar.module.css";
 
 interface Props {
   title: string;
@@ -15,24 +16,23 @@ export default function TableToolbar({
   onAddClick,
 }: Props) {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        width: "100%",
-      }}
-    >
-      <span style={{ fontWeight: 600, fontSize: "1.1rem" }}>{title}</span>
+    <div className={styles.toolbar}>
+      <span className={styles.title}>{title}</span>
 
-      <div style={{ display: "flex", gap: "1rem", alignItems: "center" }}>
+      <div className={styles.actions}>
         <InputText
+          className={styles.search}
           placeholder="Search..."
           value={globalFilter}
           onChange={(e) => onSearchChange(e.target.value)}
         />
 
-        <Button label="Add" icon="pi pi-plus" onClick={onAddClick} />
+        <Button
+          label="Add"
+          icon="pi pi-plus"
+          onClick={onAddClick}
+          className={styles.addButton}
+        />
       </div>
     </div>
   );

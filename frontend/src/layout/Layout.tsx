@@ -1,16 +1,20 @@
+import { useState } from "react";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 import { Outlet } from "react-router-dom";
+import "./layout.css";
 
 export default function Layout() {
+  const [open, setOpen] = useState(false);
+
   return (
     <div className="layout">
-      <Header />
-      <div style={{ display: "flex" }}>
-        <Sidebar />
-        <div style={{ flex: 1, padding: "1rem" }}>
-          <Outlet />
-        </div>
+      <Header onToggle={() => setOpen(!open)} />
+
+      <Sidebar open={open} onClose={() => setOpen(false)} />
+
+      <div className="content">
+        <Outlet />
       </div>
     </div>
   );

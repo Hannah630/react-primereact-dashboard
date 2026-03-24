@@ -2,7 +2,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./layout/Layout";
 import Dashboard from "./pages/Dashboard";
-import Users from "./pages/Users";
+import Websites from "./pages/websites";
 import Settings from "./pages/Settings";
 import "./index.css";
 import "primereact/resources/themes/lara-light-blue/theme.css";
@@ -16,7 +16,7 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       { index: true, element: <Dashboard /> },
-      { path: "users", element: <Users /> },
+      { path: "websites", element: <Websites /> },
       { path: "settings", element: <Settings /> },
     ],
   },

@@ -1,20 +1,24 @@
-function Header() {
+type HeaderProps = {
+  onToggle: () => void;
+};
+
+function Header({ onToggle }: HeaderProps) {
   return (
-    <header
-      style={{
-        height: '60px',
-        backgroundColor: '#1f2937',
-        color: '#fff',
-        display: 'flex',
-        alignItems: 'center',
-        padding: '0 1.5rem',
-        fontSize: '18px',
-        fontWeight: 600,
-      }}
-    >
-      React × PrimeReact Dashboard
+    <header className="header">
+      {/* 漢堡 */}
+      <button
+        onClick={onToggle}
+        className="menu-toggle"
+        aria-label="Open sidebar"
+      >
+        ☰
+      </button>
+
+      <i className="pi pi-user header-icon" aria-hidden="true"></i>
+
+      <div className="header-title">React × PrimeReact Dashboard</div>
     </header>
-  )
+  );
 }
 
-export default Header
+export default Header;
