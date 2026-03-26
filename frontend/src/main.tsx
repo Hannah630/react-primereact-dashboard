@@ -2,7 +2,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./layout/Layout";
 import Dashboard from "./pages/Dashboard";
-import Websites from "./pages/websites";
+import Websites from "./pages/Websites";
 import Settings from "./pages/Settings";
 import "./index.css";
 import "primereact/resources/themes/lara-light-blue/theme.css";
