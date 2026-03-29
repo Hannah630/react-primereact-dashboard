@@ -1,16 +1,18 @@
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import Layout from "./layout/Layout";
 import Dashboard from "./pages/Dashboard";
-import Websites from "./pages/websites";
+import Websites from "./pages/Websites";
 import Settings from "./pages/Settings";
 import "./index.css";
+
+// PrimeReact
 import "primereact/resources/themes/lara-light-blue/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import { PrimeReactProvider } from "primereact/api";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <Layout />,
