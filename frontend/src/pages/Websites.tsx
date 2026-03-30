@@ -6,7 +6,11 @@ import { Button } from "primereact/button";
 import { Dialog } from "primereact/dialog";
 import { ConfirmDialog, confirmDialog } from "primereact/confirmdialog";
 import TableToolbar from "../components/TableToolbar/TableToolbar";
-import { fetchUsers } from "../services/fakeApi";
+import {
+  personalPortfolioUrl,
+  guangcaiWebsiteUrl,
+  youyiWebsiteUrl,
+} from "./Dashboard";
 import styles from "./Websites.module.css";
 
 interface Website {
@@ -18,8 +22,32 @@ interface Website {
 }
 
 export default function Websites() {
-  const [websites, setWebsites] = useState<Website[]>([]);
-  const [loading, setLoading] = useState(true);
+  const defaultSites: Website[] = [
+    {
+      id: 1,
+      name: "個人網頁履歷",
+      url: personalPortfolioUrl,
+      type: "Portfolio",
+      status: "Online",
+    },
+    {
+      id: 2,
+      name: "光彩繡莊網頁",
+      url: guangcaiWebsiteUrl,
+      type: "Brand",
+      status: "Online",
+    },
+    {
+      id: 3,
+      name: "佑奕設計網頁",
+      url: youyiWebsiteUrl,
+      type: "Design",
+      status: "Online",
+    },
+  ];
+
+  const [websites, setWebsites] = useState<Website[]>(defaultSites);
+  const [loading, setLoading] = useState(false);
   const [globalFilter, setGlobalFilter] = useState("");
   const [visible, setVisible] = useState(false);
   const [editMode, setEditMode] = useState(false);
@@ -32,28 +60,7 @@ export default function Websites() {
     status: "",
   });
 
-  useEffect(() => {
-    const loadData = async () => {
-      setLoading(true);
-
-      // 先用假資料
-      const data = await fetchUsers();
-
-      // mock 成網站資料
-      const mapped = (data as any[]).map((item, index) => ({
-        id: item.id || index + 1,
-        name: item.name || "Demo Site",
-        url: "https://example.com",
-        type: "Demo",
-        status: "Online",
-      }));
-
-      setWebsites(mapped);
-      setLoading(false);
-    };
-
-    loadData();
-  }, []);
+  // 初始資料已經在 useState 中設定，避免 effect 內同步 setState
 
   // 刪除
   const confirmDelete = (id: number) => {
@@ -104,6 +111,12 @@ export default function Websites() {
   };
 
   // Header
+  const urlBody = (rowData: Website) => (
+    <a href={rowData.url} target="_blank" rel="noopener noreferrer">
+      {rowData.url}
+    </a>
+  );
+
   const tableHeader = (
     <TableToolbar
       title="Website Management"
@@ -115,7 +128,7 @@ export default function Websites() {
 
   return (
     <div className={styles.page}>
-      <h2 className={styles.title}>Website Management</h2>
+      <h2 className={styles.title}>作品集管理</h2>
 
       <div className={styles.tableWrapper}>
         <DataTable
@@ -129,7 +142,7 @@ export default function Websites() {
           emptyMessage="No websites found"
         >
           <Column field="name" header="Name" sortable />
-          <Column field="url" header="URL" />
+          <Column header="URL" body={urlBody} />
           <Column field="type" header="Type" />
           <Column field="status" header="Status" />
 
@@ -137,7 +150,7 @@ export default function Websites() {
             header="Actions"
             body={(rowData: Website) => (
               <div className={styles.actionButtons}>
-                {/* 👁 查看網站 */}
+                {/* 查看網站 */}
                 <Button
                   icon="pi pi-external-link"
                   severity="info"
@@ -145,7 +158,7 @@ export default function Websites() {
                   onClick={() => window.open(rowData.url, "_blank")}
                 />
 
-                {/* ✏ 編輯 */}
+                {/* 編輯 */}
                 <Button
                   icon="pi pi-pencil"
                   severity="warning"
@@ -153,7 +166,7 @@ export default function Websites() {
                   onClick={() => openEdit(rowData)}
                 />
 
-                {/* 🗑 刪除 */}
+                {/* 刪除 */}
                 <Button
                   icon="pi pi-trash"
                   severity="danger"

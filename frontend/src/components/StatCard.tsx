@@ -64,7 +64,7 @@ export default function StatCard({
 
         <div className={styles.textContent}>
           <p className={styles.label}>{title}</p>
-          <p className={styles.value}>{value}</p>
+          <div className={styles.value}>{value}</div>
         </div>
       </div>
     </Card>
