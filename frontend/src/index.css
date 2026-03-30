@@ -66,3 +66,38 @@ html, body, #root {
 .content {
   color: #1f2937;
 }
+
+/* PrimeReact button theme overrides - use deep brown theme */
+.p-button.p-button-primary,
+.p-button:not(.p-button-secondary):not(.p-button-success):not(.p-button-danger):not(.p-button-warning):not(.p-button-info):not(.p-button-help) {
+  background-color: #4B2E2E !important;
+  border-color: #4B2E2E !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+}
+.p-button.p-button-primary:hover,
+.p-button.p-button-primary:focus,
+.p-button.p-button-primary:active,
+.p-button:not(.p-button-secondary):not(.p-button-success):not(.p-button-danger):not(.p-button-warning):not(.p-button-info):not(.p-button-help):hover,
+.p-button:not(.p-button-secondary):not(.p-button-success):not(.p-button-danger):not(.p-button-warning):not(.p-button-info):not(.p-button-help):focus,
+.p-button:not(.p-button-secondary):not(.p-button-success):not(.p-button-danger):not(.p-button-warning):not(.p-button-info):not(.p-button-help):active {
+  background-color: #6b3f3a !important;
+  border-color: #6b3f3a !important;
+}
+
+/* secondary variant */
+.p-button.p-button-secondary {
+  background-color: #6b6e75 !important;
+  border-color: #6b6e75 !important;
+  color: #ffffff !important;
+}
+.p-button.p-button-secondary:hover,
+.p-button.p-button-secondary:focus {
+  background-color: #5a6166 !important;
+  border-color: #5a6166 !important;
+}
+
+/* focus outline in theme */
+.p-button:focus-visible {
+  box-shadow: 0 0 0 4px rgba(75,46,46,0.12) !important;
+}

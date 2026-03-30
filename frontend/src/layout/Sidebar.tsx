@@ -25,7 +25,7 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
 
           <NavLink to="/settings" className="menu-item" onClick={onClose}>
             <i className="pi pi-cog"></i>
-            <span>Settings</span>
+            <span>Contact</span>
           </NavLink>
         </nav>
       </div>

@@ -221,7 +221,12 @@ export default function Websites() {
             }
           />
 
-          <Button label="Save" icon="pi pi-check" onClick={saveWebsite} />
+          <Button
+            label="Save"
+            icon="pi pi-check"
+            severity="success"
+            onClick={saveWebsite}
+          />
         </div>
       </Dialog>
     </div>
