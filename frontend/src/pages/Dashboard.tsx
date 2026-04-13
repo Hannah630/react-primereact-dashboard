@@ -220,6 +220,7 @@ export default function Dashboard() {
         icon="pi-hourglass"
         imageSrc={angularImage}
         imageAlt="Angular Demo 預覽"
+        href="https://hannah630.github.io/angular-admin-demo/"
         to={portfolioRoute}
         ariaLabel="製作中 In Progress details"
       />

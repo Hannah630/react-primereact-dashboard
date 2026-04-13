@@ -44,6 +44,13 @@ export default function Websites() {
       type: "Design",
       status: "Online",
     },
+    {
+      id: 4,
+      name: "Angular Demo",
+      url: "https://hannah630.github.io/angular-admin-demo/",
+      type: "Demo",
+      status: "Online",
+    },
   ];
 
   const [websites, setWebsites] = useState<Website[]>(defaultSites);
