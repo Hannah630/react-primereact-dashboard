@@ -74,6 +74,41 @@ const defaultData: Website[] = [
 - PrimeNG
 `,
     },
+    {
+        id: 5,
+        name: "DentraLab（Vue 電商 Demo）",
+        url: "https://hannah630.github.io/DentraLab/",
+        type: "E-commerce",
+        status: "Online",
+        description: `
+電商展示頁 + 前端互動設計
+
+核心定位：
+- 模擬品牌型電商網站
+- 強調 UI/UX + 商品展示體驗
+
+技術技能：
+- Vue 2（Component-based 架構）
+- HTML5 + CSS3
+- RWD 響應式設計
+
+功能實作：
+- 商品列表渲染
+- 購物車互動（加減數量）
+- 畫面狀態同步更新
+- 元件拆分與資料傳遞
+
+設計亮點：
+- 視覺風格統一（Dental / Medical 品牌感）
+- Banner + 商品區塊結構清晰
+- 行動裝置操作流暢
+
+開發重點：
+- Vue 資料驅動畫面（data binding）
+- 元件化設計提升可維護性
+- 前端狀態管理邏輯練習
+`,
+    },
 ];
 // 取得資料（模擬 API）
 export const getWebsites = (): Promise<Website[]> => {

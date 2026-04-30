@@ -224,6 +224,56 @@ export default function Dashboard() {
         to={portfolioRoute}
         ariaLabel="製作中 In Progress details"
       />
+      <StatCard
+        title={
+          <>
+            <span>DentraLab（Vue 電商 Demo）</span>
+            <span>E-commerce Demo</span>
+          </>
+        }
+        value={
+          <div>
+            <p>
+              <strong>核心定位：</strong>模擬品牌型電商網站，強調 UI/UX
+              與商品展示體驗
+            </p>
+            <br />
+            <strong>技術技能</strong>
+            <ul>
+              <li>Vue 2（Component-based 架構）</li>
+              <li>HTML5 + CSS3</li>
+              <li>RWD 響應式設計（Mobile First）</li>
+            </ul>
+
+            <strong>功能實作</strong>
+            <ul>
+              <li>商品列表渲染</li>
+              <li>購物車互動（加減數量）</li>
+              <li>畫面狀態同步更新</li>
+              <li>元件拆分與資料傳遞</li>
+            </ul>
+
+            <strong>設計亮點</strong>
+            <ul>
+              <li>視覺風格統一（Dental / Medical 品牌感）</li>
+              <li>Banner + 商品區塊結構清晰</li>
+              <li>行動裝置操作流暢</li>
+            </ul>
+
+            <strong>開發重點</strong>
+            <ul>
+              <li>Vue 資料驅動畫面（data binding）</li>
+              <li>元件化設計提升可維護性</li>
+              <li>前端狀態管理邏輯練習</li>
+            </ul>
+          </div>
+        }
+        icon="pi-shopping-cart"
+        href="https://hannah630.github.io/DentraLab/"
+        ariaLabel="DentraLab（Vue 電商 Demo） details"
+        imageSrc="https://i.pinimg.com/736x/97/0c/dd/970cdd32de23ac0b987da4a013957b95.jpg"
+        imageAlt="DentraLab 預覽"
+      />
     </div>
   );
 }
